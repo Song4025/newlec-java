@@ -76,12 +76,36 @@ public class App {
                 System.out.println("└──────────────────────────────┘");
                 scan = new Scanner(System.in);
                 
-                System.out.print("Korean grade: ");
-                int kor = Integer.parseInt(scan.nextLine());
-                System.out.print("English grade: ");
-                int eng = Integer.parseInt(scan.nextLine());
-                System.out.print("Math grade: ");
-                int math = Integer.parseInt(scan.nextLine());
+                int kor;
+                int eng;
+                int math;
+                do{
+                    System.out.print("Korean grade: ");
+                    kor = Integer.parseInt(scan.nextLine());
+                    if(!(0<=kor && 100<=kor))
+                        System.out.println("성적의 유효범위는 0~100입니다.");
+                }while(!(0<=kor && 100<=kor));
+
+                do{
+                    System.out.print("English grade: ");
+                    eng = Integer.parseInt(scan.nextLine());
+                    if(!(0<=eng && 100<=eng))
+                        System.out.println("성적의 유효범위는 0~100입니다.");
+                }while(!(0<=eng && 100<=eng));
+                    
+                do{
+                    System.out.print("Math grade: ");
+                    math = Integer.parseInt(scan.nextLine());
+                    if(!(0<=math && 100<=math))
+                        System.out.println("성적의 유효범위는 0~100입니다.");
+                }while(!(0<=math && 100<=math));
+                
+                // System.out.print("Korean grade: ");
+                // int kor = Integer.parseInt(scan.nextLine());
+                // System.out.print("English grade: ");
+                // int eng = Integer.parseInt(scan.nextLine());
+                // System.out.print("Math grade: ");
+                // int math = Integer.parseInt(scan.nextLine());
 
                 FileOutputStream fos = new FileOutputStream("res/exams.csv", true);
                 PrintStream out = new PrintStream(fos);
